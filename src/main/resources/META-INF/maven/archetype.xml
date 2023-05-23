@@ -1,0 +1,9 @@
+<archetype>
+  <id>Learning-Spring-6-And-Spring-Boot-3</id>
+  <sources>
+    <source>src/main/java/App.java</source>
+  </sources>
+  <testSources>
+    <source>src/test/java/AppTest.java</source>
+  </testSources>
+</archetype>
