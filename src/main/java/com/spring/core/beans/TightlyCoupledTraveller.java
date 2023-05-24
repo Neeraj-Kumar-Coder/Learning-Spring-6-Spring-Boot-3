@@ -1,4 +1,4 @@
-package com.spring.core;
+package com.spring.core.beans;
 
 public class TightlyCoupledTraveller {
     Car car = null;
