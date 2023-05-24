@@ -9,7 +9,7 @@ public class LooselyCoupledTraveller {
     private Vehicle vehicle;
 
     @Autowired
-    public LooselyCoupledTraveller(@Qualifier("car") Vehicle vehicle) {
+    public LooselyCoupledTraveller(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
