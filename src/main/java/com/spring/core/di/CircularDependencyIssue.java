@@ -26,13 +26,19 @@ class CoolAppConfig {
 class DependencyA {
     DependencyB dependencyB;
 
-//    public DependencyA(DependencyB dependencyB) {
+    public DependencyA() {
+        System.out.println("I am constructor of Dependency A");
+    }
+
+    //    @Autowired
+//    public DependencyA(@Qualifier("dependencyB") DependencyB dependencyB) {
 //        this.dependencyB = dependencyB;
 //    }
 
 
     @Autowired
     public void setDependencyB(@Qualifier("dependencyB") DependencyB dependencyB) {
+        System.out.println("I am setDependencyB !");
         this.dependencyB = dependencyB;
     }
 
@@ -49,13 +55,19 @@ class DependencyA {
 class DependencyB {
     DependencyA dependencyA;
 
-//    public DependencyB(DependencyA dependencyA) {
+    public DependencyB() {
+        System.out.println("I am constructor of Dependency B");
+    }
+
+//    @Autowired
+//    public DependencyB(@Qualifier("dependencyA") DependencyA dependencyA) {
 //        this.dependencyA = dependencyA;
 //    }
 
 
     @Autowired
     public void setDependencyA(@Qualifier("dependencyA") DependencyA dependencyA) {
+        System.out.println("I am setDependencyA !");
         this.dependencyA = dependencyA;
     }
 
@@ -73,9 +85,9 @@ public class CircularDependencyIssue {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(CoolAppConfig.class);
 
         DependencyA dependencyA = applicationContext.getBean(DependencyA.class);
-        DependencyB dependencyB = applicationContext.getBean(DependencyB.class);
+//        DependencyB dependencyB = applicationContext.getBean(DependencyB.class);
 
         dependencyA.say();
-        dependencyB.say();
+//        dependencyB.say();
     }
 }
