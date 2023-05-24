@@ -85,9 +85,9 @@ public class CircularDependencyIssue {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(CoolAppConfig.class);
 
         DependencyA dependencyA = applicationContext.getBean(DependencyA.class);
-//        DependencyB dependencyB = applicationContext.getBean(DependencyB.class);
+        DependencyB dependencyB = applicationContext.getBean(DependencyB.class);
 
         dependencyA.say();
-//        dependencyB.say();
+        dependencyB.say();
     }
 }

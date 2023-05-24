@@ -10,5 +10,6 @@ public class Client {
 
         MessageSender messageSender = applicationContext.getBean(MessageSender.class);
         messageSender.sendMessage(message);
+        messageSender.sendDefaultMessage(message);
     }
 }

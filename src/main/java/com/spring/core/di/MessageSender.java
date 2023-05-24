@@ -6,6 +6,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MessageSender {
+
+//    Field based dependency injection
+    @Autowired
+    @Qualifier("sMSService")
+    private MessageService defaultMessageService;
     private MessageService messageService;
 
 //    Constructor based dependency injection
@@ -23,4 +28,6 @@ public class MessageSender {
     public void sendMessage(String message) {
         this.messageService.sendMessage(message);
     }
+
+    public void sendDefaultMessage(String message) { this.defaultMessageService.sendMessage(message);}
 }
