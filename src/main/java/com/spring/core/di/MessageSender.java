@@ -8,9 +8,15 @@ import org.springframework.stereotype.Component;
 public class MessageSender {
     private MessageService messageService;
 
-//    Constructor based dependencies injection
+//    Constructor based dependency injection
     @Autowired
     public MessageSender(@Qualifier("sMSService") MessageService messageService) {
+        this.messageService = messageService;
+    }
+
+//    Setter based dependency injection
+    @Autowired
+    public void setMessageService(@Qualifier("emailService") MessageService messageService) {
         this.messageService = messageService;
     }
 
