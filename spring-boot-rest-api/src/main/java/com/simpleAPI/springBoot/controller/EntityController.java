@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("api")
 public class EntityController {
 
     @GetMapping("/getEntity")
