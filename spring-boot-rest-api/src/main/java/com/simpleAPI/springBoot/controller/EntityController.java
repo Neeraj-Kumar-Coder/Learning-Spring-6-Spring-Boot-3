@@ -12,12 +12,11 @@ public class EntityController {
 
     @GetMapping("/getEntity")
     public Entity getEntity() {
-        Entity entity = new Entity(1, "Living Organism");
-        return entity;
+        return new Entity(1, "Living Organism");
     }
 
     @GetMapping("/getEntities")
-    public List<Entity> getEnities() {
+    public List<Entity> getEntities() {
         List<Entity> entities = new ArrayList<>();
         entities.add(new Entity(1, "Nature"));
         entities.add(new Entity(2, "Humans"));
@@ -42,6 +41,12 @@ public class EntityController {
     @ResponseStatus(HttpStatus.CREATED)
     public Entity createEntity(@RequestBody Entity entity) {
         System.out.printf(entity.getId() + " " + entity.getType());
+        return entity;
+    }
+
+    @PutMapping("/entity/update/{id}")
+    public Entity updateEntity(@RequestBody Entity entity, @PathVariable("id") int entityId) {
+        entity.setId(entityId);
         return entity;
     }
 }
