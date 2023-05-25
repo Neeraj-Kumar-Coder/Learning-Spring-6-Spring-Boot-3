@@ -2,6 +2,7 @@ package com.simpleAPI.springBoot.controller;
 
 import com.simpleAPI.springBoot.beans.Entity;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -48,5 +49,16 @@ public class EntityController {
     public Entity updateEntity(@RequestBody Entity entity, @PathVariable("id") int entityId) {
         entity.setId(entityId);
         return entity;
+    }
+
+    @DeleteMapping("/entity/delete/{id}")
+    public String deleteEntity(@PathVariable("id") int entityId) {
+        return String.format("%d ID successfully deleted!", entityId);
+    }
+
+    @GetMapping("/new/getEntity")
+    public ResponseEntity<?> sendEntity() {
+//        return new ResponseEntity<>(new Entity(99, "Dragons"), HttpStatus.OK);
+        return ResponseEntity.ok().header("custom-header", "neeraj").body(new Entity(99, "Dragons"));
     }
 }
