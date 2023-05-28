@@ -106,3 +106,9 @@ public class Product {
         this.lastUpdated = lastUpdated;
     }
 }
+
+/**
+ * GenerationType.AUTO -> it lets persistence provider choose the strategy (in most cases it chooses GenerationType.SEQUENCE)
+ * GenerationType.IDENTITY -> it lets database generate auto-incremented values and is very efficient
+ * GenerationType.SEQUENCE -> it generates primary key values based on a specific sequence as provided by @SequenceGenerator annotation
+ * */
