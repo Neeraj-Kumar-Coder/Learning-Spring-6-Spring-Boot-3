@@ -1,6 +1,8 @@
 package com.springDataJPA.springboot.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -30,8 +32,10 @@ public class Product {
 
     private String imageUrl;
 
+    @CreationTimestamp
     private LocalDateTime creationDate;
 
+    @UpdateTimestamp
     private LocalDateTime lastUpdated;
 
     public Long getId() {
