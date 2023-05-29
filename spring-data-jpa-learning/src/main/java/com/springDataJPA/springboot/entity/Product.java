@@ -47,8 +47,8 @@ public class Product {
     private LocalDateTime lastUpdated;
 }
 
-/**
- * GenerationType.AUTO -> it lets persistence provider choose the strategy (in most cases it chooses GenerationType.SEQUENCE)
- * GenerationType.IDENTITY -> it lets database generate auto-incremented values and is very efficient
- * GenerationType.SEQUENCE -> it generates primary key values based on a specific sequence as provided by @SequenceGenerator annotation
- * */
+/*
+  GenerationType.AUTO -> it lets persistence provider choose the strategy (in most cases it chooses GenerationType.SEQUENCE)
+  GenerationType.IDENTITY -> it lets database generate auto-incremented values and is very efficient
+  GenerationType.SEQUENCE -> it generates primary key values based on a specific sequence as provided by @SequenceGenerator annotation
+  */
