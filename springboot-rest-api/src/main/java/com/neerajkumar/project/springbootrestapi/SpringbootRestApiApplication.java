@@ -1,11 +1,13 @@
-package com.springDataJPA.springboot;
+package com.neerajkumar.project.springbootrestapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringDataJpaLearningApplication {
+public class SpringbootRestApiApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(SpringDataJpaLearningApplication.class, args);
+        SpringApplication.run(SpringbootRestApiApplication.class, args);
     }
+
 }
